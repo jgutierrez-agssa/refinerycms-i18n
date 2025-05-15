@@ -22,7 +22,7 @@ module Refinery
           end
 
           def find_or_set_locale
-            locale = params[:locale]&.to_sym
+            locale = ::I18n.locale
             ::I18n.locale = ::Refinery::I18n.default_frontend_locale
 
             if valid_locale?(locale) || locale == ::Refinery::I18n.default_frontend_locale
